@@ -1,0 +1,26 @@
+body {
+  background-color: #db818e;
+}
+.mainbox {
+  margin: auto;
+}
+
+.err {
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 4rem;
+  position: absolute;
+  left: 20%;
+  top: 8%;
+}
+
+.msg,
+p {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+}
+
+p { 
+  font-size: 1.3rem 
+}

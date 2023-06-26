@@ -1,0 +1,51 @@
+#hero_image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/img/glasses.png");
+  height: 250px;
+  color: #f9fafb;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#hero_title {
+  padding: 4rem;
+}
+
+nav > ul {
+  width: 50%;
+  float: left;
+  margin: 6em 0 0 0;
+}
+
+.main_wrapper {
+  padding: 5em;
+}
+
+nav {
+  position: absolute;
+  top: -15px;
+  right: 18%;
+  width: 35%;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 1.1em 5px 0 0;
+  font-size: 18px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #6c0314;
+}
+
+nav .pipe {
+  display: inline-block;
+  margin: 0 0 0 5px;
+}

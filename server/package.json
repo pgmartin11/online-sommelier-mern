@@ -1,0 +1,30 @@
+{
+  "name": "assignment-5-rest-api-pgmartin11",
+  "version": "1.0.0",
+  "description": "Code for Assignment 5",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "start-dev": "nodemon --inspect ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:HarvardDCENode/assignment-5-rest-api-pgmartin11.git"
+  },
+  "author": "Peter G. Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com:HarvardDCENode/assignment-5-rest-api-pgmartin11/issues"
+  },
+  "homepage": "https://github.com:HarvardDCENode/assignment-5-rest-api-pgmartin11#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "prettier": "2.8.4"
+  }
+}

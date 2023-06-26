@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-6">
+    <form #form="ngForm" (ngSubmit)="createReview(form)">
+      <label for="region">Region/Varietal:</label>
+      <input
+        id="region"
+        required
+        minlength="2"
+        #region="ngModel"
+        name="regionField"
+        class="form-control"
+        [ngModel]="review.region"
+      />
+      <div
+        *ngIf="region.invalid && (region.dirty || region.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="region.errors.minlength">
+          Region must be at least 2 characters long.
+        </div>
+      </div>
+      <label for="producer">Producer:</label>
+      <input
+        id="producer"
+        required
+        minlength="2"
+        #producer="ngModel"
+        name="producerField"
+        class="form-control"
+        [ngModel]="review.producer"
+      />
+      <div
+        *ngIf="producer.invalid && (producer.dirty || producer.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="producer.errors.minlength">
+          Producer must be at least 2 characters long.
+        </div>
+      </div>
+      <label for="year">Year:</label>
+      <input
+        id="year"
+        minlength="4"
+        #year="ngModel"
+        name="yearField"
+        class="form-control"
+        [ngModel]="review.year"
+      />
+      <div
+        *ngIf="year.invalid && (year.dirty || year.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="year.errors.minlength">
+          Year must be at least 4 characters long.
+        </div>
+      </div>
+      <label for="notes">Tasting Notes:</label>
+      <textarea
+        id="notes"
+        name="notesField"
+        [ngModel]="review.notes"
+      ></textarea>
+      <input type="submit" [disabled]="!form.valid" />
+    </form>
+  </div>
+  <div class="col-md-6 reviews_wrapper">
+    <p class="region">{{ review.region }}</p>
+    <p>{{ review.producer }} {{ review.year }}</p>
+    <p>{{ review.notes }}</p>
+  </div>
+</div>

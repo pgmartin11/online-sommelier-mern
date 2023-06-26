@@ -1,0 +1,53 @@
+<div *ngIf="toDelete; else elseBlock">
+  <h2>Delete Review</h2>
+  <div class="row reviews_wrapper">
+    <div class="col-md-12">
+      <h4>Delete this review?</h4>
+      <p class="region">{{ review.region }}</p>
+      <p>{{ review.producer }} {{ review.year }}</p>
+      <p class="notes">{{ review.notes }}</p>
+    </div>
+    <div class="col-md-6">
+      <button id="delete-submit" (click)="deleteReview()">Delete</button>
+      <a id="delete-cancel" routerLink="/reviews">Cancel</a>
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <h2>Update Review</h2>
+  <div class="row reviews_wrapper">
+    <div class="col-md-6">
+      <form #form="ngForm" (ngSubmit)="updateReview(form.value)">
+        <label for="region">Region/Varietal:</label>
+        <input
+          id="region"
+          name="regionField"
+          class="form-control"
+          [ngModel]="review.region"
+        />
+        <label for="producer">Producer:</label>
+        <input
+          id="produce"
+          name="producerField"
+          class="form-control"
+          [ngModel]="review.producer"
+        />
+        <label for="year">Year:</label>
+        <input
+          id="year"
+          name="yearField"
+          class="form-control"
+          [ngModel]="review.year"
+        />
+        <label for="notes">Tasting Notes:</label>
+        <textarea
+          id="notes"
+          name="notesField"
+          [ngModel]="review.notes"
+        ></textarea>
+        <input type="submit" />
+      </form>
+      <a routerLink="/reviews">Go back</a>
+    </div>
+  </div>
+</ng-template>

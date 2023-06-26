@@ -1,0 +1,58 @@
+.reviews_wrapper {
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.reviews_wrapper .form-control {
+  border: 1px solid #777777;
+  border-radius: 3px;
+  padding: 1px 2px;
+}
+
+label {
+  display: block;
+}
+
+input:not([type="radio"]),
+textarea {
+  display: block;
+  margin-bottom: 1em;
+  height: 2.5em;
+  width: 20em;
+}
+
+textarea {
+  min-height: 5rem;
+}
+
+#delete-submit,
+#delete-cancel {
+  color: #000;
+  background-color: #efefef;
+  padding: 4px 7px;
+  border: 1px solid #777777;
+  text-decoration: none;
+  font-weight: 400;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+
+#delete-cancel {
+  display: inline-block;
+  height: 2.1em;
+}
+
+#delete-submit:hover,
+#delete-cancel:hover {
+  background-color: #e5e5e5;
+}
+
+.region {
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 0.25rem;
+}

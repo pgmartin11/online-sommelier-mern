@@ -1,0 +1,21 @@
+<h2>Compiled Reviews</h2>
+<p>
+  A wine's overall quality assessment is based on a comparison with recognized
+  standards, both with respect to other wines in its price range and according
+  to known factors pertaining to the region or vintage.
+</p>
+<p>
+  Below are informal reviews from visitors to this site containing their overall
+  observations and impressions after sampling a vintage.
+</p>
+<h5 *ngIf="reviewList.length == 0">
+  No reviews yet
+</h5>
+<div class="reviews_wrapper row">
+  <app-review
+    *ngFor="let reviewObj of reviewList"
+    [review]="reviewObj"
+    class="col-md-6"
+  >
+  </app-review>
+</div>

@@ -1,0 +1,7 @@
+<div class="review">
+  <p class="region">{{ review.region }}</p>
+  <p>{{ review.producer }} {{ review.year }}</p>
+  <p class="notes">{{ review.notes }}</p>
+  <a routerLink="/reviews/{{ review._id }}">Update</a>
+  <a routerLink="/reviews/delete/{{ review._id }}">Delete</a>
+</div>
