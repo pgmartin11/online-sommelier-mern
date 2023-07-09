@@ -1,11 +1,11 @@
 {
-  "name": "assignment-3-pgmartin11-mern",
+  "name": "online-sommelier-mern",
   "version": "1.0.0",
-  "description": "starter mern project based on csci e-39 assignment3",
+  "description": "Online Sommelier app with a React front end",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "build": "webpack --mode=production --node-env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peter G. Martin",
