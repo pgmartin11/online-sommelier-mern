@@ -1,7 +1,7 @@
 {
-  "name": "assignment-5-rest-api-pgmartin11",
+  "name": "online-sommelier-mern",
   "version": "1.0.0",
-  "description": "Code for Assignment 5",
+  "description": "Code for Online Sommelier app",
   "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:HarvardDCENode/assignment-5-rest-api-pgmartin11.git"
+    "url": "git+https://github.com:pgmartin11/online-sommelier-mern.git"
   },
   "author": "Peter G. Martin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com:HarvardDCENode/assignment-5-rest-api-pgmartin11/issues"
+    "url": "https://github.com:pgmartin11/online-sommelier-mern/issues"
   },
-  "homepage": "https://github.com:HarvardDCENode/assignment-5-rest-api-pgmartin11#readme",
+  "homepage": "https://github.com:pgmartin11/online-sommelier-mern#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
