@@ -23,11 +23,11 @@ const Header = () => (
         <nav>
           <ul>
             <li>
-              <a href="">Home</a>
+              <a href="#">Home</a>
               <div className="pipe">|</div>
             </li>
             <li>
-              <a href="/reviews">Reviews</a>
+              <a href="#">Reviews</a>
             </li>
           </ul>
         </nav>
@@ -41,16 +41,18 @@ const App = () => {
     <Router basename="/">
       <TimerProvider>
         <Header />
-        <Routes>
-          <Route path={PATHS.HOME} element={<CompilationView />} />
-          {/* <Route path={PATHS.HOME} element={<WorkoutView />} /> */}
-          {/* <Route path={PATHS.REVIEWS} element={<CompilationView />} /> */}
-          <Route path={PATHS.ADD} element={<NewTimer />} />
-          <Route path={PATHS.EDIT()} element={<EditTimer />} />
-          <Route path={PATHS.DOCS} element={<DocumentationView />} />
-          <Route path={PATHS.HISTORY} element={<HistoryView />} />
-          <Route path="*" element={<Navigate to={PATHS.HOME} />} />
-        </Routes>
+        <div className="main_wrapper">
+          <Routes>
+            <Route path={PATHS.HOME} element={<CompilationView />} />
+            {/* <Route path={PATHS.HOME} element={<WorkoutView />} /> */}
+            {/* <Route path={PATHS.REVIEWS} element={<CompilationView />} /> */}
+            <Route path={PATHS.ADD} element={<NewTimer />} />
+            <Route path={PATHS.EDIT()} element={<EditTimer />} />
+            <Route path={PATHS.DOCS} element={<DocumentationView />} />
+            <Route path={PATHS.HISTORY} element={<HistoryView />} />
+            <Route path="*" element={<Navigate to={PATHS.HOME} />} />
+          </Routes>
+        </div>
       </TimerProvider>
     </Router>
   );
