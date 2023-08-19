@@ -5,37 +5,54 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import styled from "styled-components";
 import TimerProvider from "./components/timers/TimerProvider";
 import NewTimer from "./components/timers/NewTimer";
 import EditTimer from "./components/timers/EditTimer";
 import WorkoutView from "./views/WorkoutView";
 import DocumentationView from "./views/DocumentationView";
 import HistoryView from "./views/HistoryView";
+import CompilationView from "./views/CompilationView";
 import { PATHS } from "./constants";
 
-const Container = styled.div`
-  background: #f0f6fb;
-  height: 100vh;
-  overflow: auto;
-`;
+
+const Header = () => (
+    <div id="hero_image">
+      <div id="hero_title">
+        <h1>The Online Sommelier</h1>
+        <h4>Your Resource for All Things Wine</h4>
+        <nav>
+          <ul>
+            <li>
+              <a href="">Home</a>
+              <div className="pipe">|</div>
+            </li>
+            <li>
+              <a href="/reviews">Reviews</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+);
+
 
 const App = () => {
   return (
-    <Container>
-      <Router basename="/">
-        <TimerProvider>
-          <Routes>
-            <Route path={PATHS.HOME} element={<WorkoutView />} />
-            <Route path={PATHS.ADD} element={<NewTimer />} />
-            <Route path={PATHS.EDIT()} element={<EditTimer />} />
-            <Route path={PATHS.DOCS} element={<DocumentationView />} />
-            <Route path={PATHS.HISTORY} element={<HistoryView />} />
-            <Route path="*" element={<Navigate to={PATHS.HOME} />} />
-          </Routes>
-        </TimerProvider>
-      </Router>
-    </Container>
+    <Router basename="/">
+      <TimerProvider>
+        <Header />
+        <Routes>
+          <Route path={PATHS.HOME} element={<CompilationView />} />
+          {/* <Route path={PATHS.HOME} element={<WorkoutView />} /> */}
+          {/* <Route path={PATHS.REVIEWS} element={<CompilationView />} /> */}
+          <Route path={PATHS.ADD} element={<NewTimer />} />
+          <Route path={PATHS.EDIT()} element={<EditTimer />} />
+          <Route path={PATHS.DOCS} element={<DocumentationView />} />
+          <Route path={PATHS.HISTORY} element={<HistoryView />} />
+          <Route path="*" element={<Navigate to={PATHS.HOME} />} />
+        </Routes>
+      </TimerProvider>
+    </Router>
   );
 };
 
