@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Wrapped from "./Wrapped";
-import "./index.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./scss/index.scss";
 
 window.React = React;
 

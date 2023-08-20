@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { ReviewService } from "../providers/ReviewService";
 import { useNavigate, Link } from "react-router-dom";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Review from "../components/Review";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 
 const CompilationView = () => {
@@ -18,8 +19,8 @@ const CompilationView = () => {
     .catch(err => console.error(err));
   }, []);
 
-      //debug
-      console.log('reviews', reviews);
+//debug
+console.log('reviews', reviews);
 
   return (
     <>
@@ -38,15 +39,9 @@ const CompilationView = () => {
           <Container>
             <Row>
               { (reviews.length == 0) && <h5>No reviews yet</h5> }
-              { reviews.map(review => (
-                    <Col md={6}>
-                      <div className="review">
-                        <p className="region">{review.region}</p>
-                        <p>{review.producer} {review.year}</p>
-                        <p className="notes">{review.notes}</p>
-                        <a href="#">Update</a>
-                        <a href="#">Delete</a>
-                      </div>
+              { reviews.map((review, i) => (
+                    <Col key={`rev-${i}`} md={6}>
+                      <Review {...review} />
                     </Col>
                 ))
               }
@@ -55,6 +50,6 @@ const CompilationView = () => {
       </div>      
     </>
   );
-};
+}
 
 export default CompilationView;
