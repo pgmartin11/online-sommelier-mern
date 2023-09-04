@@ -1,6 +1,6 @@
 export const PATHS = {
   HOME: "/",
-  LIST: "/",
+  LIST: "/reviews",
   ADD: "/add",
   EDIT: (id, pos) => `/edit/${id || ':id'}/${pos || ':pos'}`,
   UPDATE: (id) => `/reviews/${id || ':id'}`,

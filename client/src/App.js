@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Link,
   Navigate,
 } from "react-router-dom";
 import TimerProvider from "./components/timers/TimerProvider";
@@ -12,6 +13,7 @@ import WorkoutView from "./views/WorkoutView";
 import DocumentationView from "./views/DocumentationView";
 import HistoryView from "./views/HistoryView";
 import CompilationView from "./views/CompilationView";
+import HomeView from "./views/HomeView";
 import ReviewDetail from "./components/ReviewDetail";
 import { PATHS } from "./constants";
 
@@ -24,11 +26,11 @@ const Header = () => (
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to={PATHS.HOME}>Home</Link>
               <div className="pipe">|</div>
             </li>
             <li>
-              <a href="#">Reviews</a>
+              <Link to={PATHS.LIST}>Reviews</Link>
             </li>
           </ul>
         </nav>
@@ -44,7 +46,8 @@ const App = () => {
         <Header />
         <div className="main_wrapper">
           <Routes>
-            <Route path={PATHS.HOME} element={<CompilationView />} />
+            <Route path={PATHS.HOME} element={<HomeView />} />
+            <Route path={PATHS.LIST} element={<CompilationView />} />
             <Route path={PATHS.DELETE()} element={<ReviewDetail />} />
             <Route path="*" element={<Navigate to={PATHS.HOME} />} />
           </Routes>
