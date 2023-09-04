@@ -12,7 +12,7 @@ import WorkoutView from "./views/WorkoutView";
 import DocumentationView from "./views/DocumentationView";
 import HistoryView from "./views/HistoryView";
 import CompilationView from "./views/CompilationView";
-import ReviewDetail from "./views/ReviewDetail";
+import ReviewDetail from "./components/ReviewDetail";
 import { PATHS } from "./constants";
 
 

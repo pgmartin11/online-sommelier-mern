@@ -26,7 +26,7 @@ const ReviewDetail = () => {
   const delReview = () => {
     ReviewService.deleteReview(id)
     .then(result => {
-      navigate(PATHS.HOME);
+      navigate(PATHS.LIST);
     })
     .catch(err => console.error(err));
   }
@@ -46,7 +46,7 @@ const ReviewDetail = () => {
             </div>
             <div className="col-md-6">
               <button className="delete-submit" onClick={delReview}>Delete</button>
-              <Link className="delete-cancel" to={PATHS.HOME}>Cancel</Link>
+              <Link className="delete-cancel" to={PATHS.LIST}>Cancel</Link>
             </div>
         </div>  
       )} 
