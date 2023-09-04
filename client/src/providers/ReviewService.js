@@ -26,7 +26,9 @@ export class ReviewService {
   //}
 
   // delete
-  //deleteReview(id): Observable<any> {
-  //  return this.http.delete(`${this.apiurl}api/reviews/${id}`);
-  //}
+  static deleteReview(id) {
+    return fetch(`${this.#apiurl}api/reviews/${id}`, {
+      method: 'DELETE'
+    });
+  }
 }

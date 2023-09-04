@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PATHS } from "../constants";
 import "../scss/review.scss";
 
 
@@ -9,7 +10,7 @@ const Review = ({ _id, region, producer, year, notes }) => (
       <p>{producer} {year}</p>
       <p className="notes">{notes}</p>
       <Link to="#">Update</Link>
-      <Link to="#">Delete</Link>
+      <Link to={PATHS.DELETE(_id)}>Delete</Link>
     </div>
 )
 

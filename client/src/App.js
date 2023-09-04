@@ -12,6 +12,7 @@ import WorkoutView from "./views/WorkoutView";
 import DocumentationView from "./views/DocumentationView";
 import HistoryView from "./views/HistoryView";
 import CompilationView from "./views/CompilationView";
+import ReviewDetail from "./views/ReviewDetail";
 import { PATHS } from "./constants";
 
 
@@ -44,12 +45,7 @@ const App = () => {
         <div className="main_wrapper">
           <Routes>
             <Route path={PATHS.HOME} element={<CompilationView />} />
-            {/* <Route path={PATHS.HOME} element={<WorkoutView />} /> */}
-            {/* <Route path={PATHS.REVIEWS} element={<CompilationView />} /> */}
-            <Route path={PATHS.ADD} element={<NewTimer />} />
-            <Route path={PATHS.EDIT()} element={<EditTimer />} />
-            <Route path={PATHS.DOCS} element={<DocumentationView />} />
-            <Route path={PATHS.HISTORY} element={<HistoryView />} />
+            <Route path={PATHS.DELETE()} element={<ReviewDetail />} />
             <Route path="*" element={<Navigate to={PATHS.HOME} />} />
           </Routes>
         </div>

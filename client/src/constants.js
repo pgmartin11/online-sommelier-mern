@@ -1,10 +1,9 @@
 export const PATHS = {
   HOME: "/",
-  REVIEWS: "/rev",
   ADD: "/add",
   EDIT: (id, pos) => `/edit/${id || ':id'}/${pos || ':pos'}`,
-  DOCS: "/docs",
-  HISTORY: "/history",
+  UPDATE: (id) => `/reviews/${id || ':id'}`,
+  DELETE: (id) => `/reviews/delete/${id || ':id'}`,
 };
 
 export const TIMERS = {
