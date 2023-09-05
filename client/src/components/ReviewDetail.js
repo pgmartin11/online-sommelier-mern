@@ -37,17 +37,21 @@ const ReviewDetail = () => {
 
       { !review && <h5>Loading...</h5> }
       { review && (
-        <div className="row reviews_wrapper">
-            <div className="col-md-12">
-              <h4>Delete this review?</h4>
-              <p className="region">{ review.region }</p>
-              <p>{ review.producer } { review.year }</p>
-              <p className="notes">{ review.notes }</p>
-            </div>
-            <div className="col-md-6">
-              <button className="delete-submit" onClick={delReview}>Delete</button>
-              <Link className="delete-cancel" to={PATHS.LIST}>Cancel</Link>
-            </div>
+        <div className="reviews_wrapper">
+          <Container>
+            <Row>
+              <Col md={12}>
+                <h4>Delete this review?</h4>
+                <p className="region">{ review.region }</p>
+                <p>{ review.producer } { review.year }</p>
+                <p className="notes">{ review.notes }</p>
+              </Col>
+              <Col md={6}>
+                <button className="delete-submit" onClick={delReview}>Delete</button>
+                <Link className="delete-cancel" to={PATHS.LIST}>Cancel</Link>
+              </Col>
+            </Row>
+          </Container>
         </div>  
       )} 
     </>

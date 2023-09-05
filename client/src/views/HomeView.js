@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { ReviewService } from "../providers/ReviewService";
 import { useNavigate, Link } from "react-router-dom";
 import { PATHS } from "../constants";
-import Container from "react-bootstrap/Container";
 import Review from "../components/Review";
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import AddReviewForm from "../components/AddReviewForm";
 
 
 const HomeView = () => {
@@ -30,7 +31,8 @@ const HomeView = () => {
       <p>
         After opening a new bottle, record your impresssions using the form below.
         Visit our <Link to={PATHS.LIST}>reviews page</Link> to see all past reviews.
-      </p>      
+      </p>
+      <AddReviewForm />    
     </>
   );
 }

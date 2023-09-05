@@ -6,12 +6,6 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
-import TimerProvider from "./components/timers/TimerProvider";
-import NewTimer from "./components/timers/NewTimer";
-import EditTimer from "./components/timers/EditTimer";
-import WorkoutView from "./views/WorkoutView";
-import DocumentationView from "./views/DocumentationView";
-import HistoryView from "./views/HistoryView";
 import CompilationView from "./views/CompilationView";
 import HomeView from "./views/HomeView";
 import ReviewDetail from "./components/ReviewDetail";
@@ -42,17 +36,15 @@ const Header = () => (
 const App = () => {
   return (
     <Router basename="/">
-      <TimerProvider>
-        <Header />
-        <div className="main_wrapper">
-          <Routes>
-            <Route path={PATHS.HOME} element={<HomeView />} />
-            <Route path={PATHS.LIST} element={<CompilationView />} />
-            <Route path={PATHS.DELETE()} element={<ReviewDetail />} />
-            <Route path="*" element={<Navigate to={PATHS.HOME} />} />
-          </Routes>
-        </div>
-      </TimerProvider>
+      <Header />
+      <div className="main_wrapper">
+        <Routes>
+          <Route path={PATHS.HOME} element={<HomeView />} />
+          <Route path={PATHS.LIST} element={<CompilationView />} />
+          <Route path={PATHS.DELETE()} element={<ReviewDetail />} />
+          <Route path="*" element={<Navigate to={PATHS.HOME} />} />
+        </Routes>
+      </div>
     </Router>
   );
 };

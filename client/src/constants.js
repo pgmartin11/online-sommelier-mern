@@ -6,10 +6,3 @@ export const PATHS = {
   UPDATE: (id) => `/reviews/${id || ':id'}`,
   DELETE: (id) => `/reviews/delete/${id || ':id'}`,
 };
-
-export const TIMERS = {
-  STOPWATCH: "Stopwatch",
-  COUNTDOWN: "Countdown",
-  XY: "XY",
-  TABATA: "Tabata",
-}
