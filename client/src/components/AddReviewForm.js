@@ -17,19 +17,14 @@ const AddReviewForm = () => {
   const navigate = useNavigate();
 
   const submitHandler = (e) => {
- console.log('************ inside submitHandler');    
-    e.prevenDefault();
-
-    console.log('region', region, 'producer', producer, 'year', year, 'notes', notes);
+    e.preventDefault();
+console.log('region', region, 'producer', producer, 'year', year, 'notes', notes);
     
-    //resetRegion();
-    //resetProducer();
-    //resetYear();
-    //resetNotes();
-    navigate(PATHS.HOME);
+    resetRegion();
+    resetProducer();
+    resetYear();
+    resetNotes();
   }
-
-  console.log('************ Hi');
 
   return (
     <Container>
