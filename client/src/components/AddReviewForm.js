@@ -27,49 +27,40 @@ console.log('region', region, 'producer', producer, 'year', year, 'notes', notes
   }
 
   return (
-    <Container>
-      <Row>
-        <Col md={6}>
-          <form onSubmit={submitHandler}>
-            <label htmlFor="region">Region/Varietal:</label>
-            <input
-              type="text"
-              className="form-control"
-              name="regionField"
-              {...region}
-            />
-            <label htmlFor="producer">Producer:</label>
-            <input
-              type="text"
-              className="form-control"
-              required
-              minLength="2"
-              {...producer}
-            />
-            <label htmlFor="year">Year:</label>
-            <input
-              type="text"
-              className="form-control"
-              name="yearField"
-              {...year}
-            />
-            <label htmlFor="notes">Tasting Notes:</label>
-            <textarea
-              name="notesField"
-              {...notes}>
-            </textarea>
-            <input type="submit" />
-          </form>
-        </Col>
-        <Col md={6}>
-          <div className="reviews_wrapper">
-            <p className="region"></p>
-            <p></p>
-            <p></p>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+    <form onSubmit={submitHandler}>
+      <label htmlFor="region">Region/Varietal:</label>
+      <input
+        type="text"
+        className="form-control"
+        required
+        name="regionField"
+        minLength="2"
+        {...region}
+      />
+      <label htmlFor="producer">Producer:</label>
+      <input
+        type="text"
+        className="form-control"
+        required
+        name="producerField"
+        minLength="2"
+        {...producer}
+      />
+      <label htmlFor="year">Year:</label>
+      <input
+        type="text"
+        className="form-control"
+        name="yearField"
+        minLength="4"
+        {...year}
+      />
+      <label htmlFor="notes">Tasting Notes:</label>
+      <textarea
+        name="notesField"
+        {...notes}>
+      </textarea>
+      <input type="submit" />
+    </form>
   );
 }
 

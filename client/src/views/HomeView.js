@@ -32,7 +32,20 @@ const HomeView = () => {
         After opening a new bottle, record your impresssions using the form below.
         Visit our <Link to={PATHS.LIST}>reviews page</Link> to see all past reviews.
       </p>
-      <AddReviewForm />    
+      <Container>
+        <Row>
+          <Col md={6}>
+            <AddReviewForm />
+          </Col> 
+          <Col md={6}>
+            <div className="reviews_wrapper">
+              <p className="region"></p>
+              <p></p>
+              <p></p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
