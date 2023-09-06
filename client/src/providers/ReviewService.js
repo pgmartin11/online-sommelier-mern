@@ -16,9 +16,16 @@ export class ReviewService {
   }
 
   // create
-  //createReview(reviewData): Observable<any> {
+  static createReview(reviewData) {
   //  return this.http.post(`${this.apiurl}api/reviews`, reviewData);
-  //}
+    return fetch(`${this.#apiurl}api/reviews`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(reviewData),
+    });
+  }
 
   // update
   //updateReview(id, reviewData): Observable<any> {

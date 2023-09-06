@@ -1,6 +1,7 @@
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ReviewService } from "../providers/ReviewService";
 import { useNavigate, Link } from "react-router-dom";
+import { useInput } from "../hooks";
 import { PATHS } from "../constants";
 import Review from "../components/Review";
 import Container from "react-bootstrap/Container";
@@ -10,10 +11,35 @@ import AddReviewForm from "../components/AddReviewForm";
 
 
 const HomeView = () => {
-  //let [reviews, setReviews] = useState([]);
+  const [region, resetRegion] = useInput('');
+  const [producer, resetProducer] = useInput('');
+  const [year, resetYear] = useInput('');
+  const [notes, resetNotes] = useInput('');
+  const [formData, setFormData] = useState({});
+
+  const navigate = useNavigate();
 
   useEffect(() => {
   }, []);
+
+  const formHandler = (e) => {
+    e.preventDefault();
+    const reviewData = {
+      region: region.value,
+      producer: producer.value,
+      year: year.value,
+      notes: notes.value
+    };
+    ReviewService.createReview(reviewData)
+    .then(result => {
+      setFormData(reviewData);
+      resetRegion();
+      resetProducer();
+      resetYear();
+      resetNotes();
+    })
+    .catch(err => console.error(err));
+  }
 
   return (
     <>
@@ -35,13 +61,19 @@ const HomeView = () => {
       <Container>
         <Row>
           <Col md={6}>
-            <AddReviewForm />
+            <AddReviewForm
+              region={region}
+              producer={producer}
+              year={year}
+              notes={notes}
+              handler={formHandler}
+            />
           </Col> 
           <Col md={6}>
             <div className="reviews_wrapper">
-              <p className="region"></p>
-              <p></p>
-              <p></p>
+              <p className="region">{formData.region}</p>
+              <p>{formData.producer} {formData.year}</p>
+              <p>{formData.notes}</p>
             </div>
           </Col>
         </Row>

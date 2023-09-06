@@ -1,33 +1,17 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { PATHS } from "../constants";
-import { useInput } from "../hooks";
 import "../scss/add-review-form.scss";
 
 
-const AddReviewForm = () => {
-  const [region, resetRegion] = useInput('');
-  const [producer, resetProducer] = useInput('');
-  const [year, resetYear] = useInput('');
-  const [notes, resetNotes] = useInput('');
-
-  const navigate = useNavigate();
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-console.log('region', region, 'producer', producer, 'year', year, 'notes', notes);
-    
-    resetRegion();
-    resetProducer();
-    resetYear();
-    resetNotes();
-  }
+const AddReviewForm = ({
+  region,
+  producer,
+  year,
+  notes,
+  handler
+}) => {
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={handler}>
       <label htmlFor="region">Region/Varietal:</label>
       <input
         type="text"
