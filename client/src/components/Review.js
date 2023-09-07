@@ -9,7 +9,7 @@ const Review = ({ _id, region, producer, year, notes }) => (
       <p className="region">{region}</p>
       <p>{producer} {year}</p>
       <p className="notes">{notes}</p>
-      <Link to="#">Update</Link>
+      <Link to={PATHS.UPDATE(_id)}>Update</Link>
       <Link to={PATHS.DELETE(_id)}>Delete</Link>
     </div>
 )

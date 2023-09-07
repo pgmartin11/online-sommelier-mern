@@ -41,6 +41,7 @@ const App = () => {
         <Routes>
           <Route path={PATHS.HOME} element={<HomeView />} />
           <Route path={PATHS.LIST} element={<CompilationView />} />
+          <Route path={PATHS.UPDATE()} element={<ReviewDetail />} />
           <Route path={PATHS.DELETE()} element={<ReviewDetail />} />
           <Route path="*" element={<Navigate to={PATHS.HOME} />} />
         </Routes>

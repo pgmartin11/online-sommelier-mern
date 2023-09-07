@@ -28,9 +28,15 @@ export class ReviewService {
   }
 
   // update
-  //updateReview(id, reviewData): Observable<any> {
-  //  return this.http.put(`${this.apiurl}api/reviews/${id}`, reviewData);
-  //}
+  static updateReview(id, reviewData) {
+    return fetch(`${this.#apiurl}api/reviews/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(reviewData),
+    });
+  }
 
   // delete
   static deleteReview(id) {
