@@ -47,21 +47,19 @@ const InnerReviewDetail = ({_id: id, region: propRegion, producer: propProducer,
     return (
       <>
         <h2>Delete Review</h2>
-        <div className="reviews_wrapper">
-          <Container>
-            <Row>
-              <Col md={12}>
-                <h4>Delete this review?</h4>
-                <p className="region">{ region.value }</p>
-                <p>{ producer.value } { year.value }</p>
-                <p className="notes">{ notes.value }</p>
-              </Col>
-              <Col md={6}>
-                <button className="delete-submit" onClick={delReview}>Delete</button>
-                <Link className="delete-cancel" to={PATHS.LIST}>Cancel</Link>
-              </Col>
-            </Row>
-          </Container>
+        <div className="delete_wrapper">
+          <Row>
+            <Col md={12}>
+              <h4>Delete this review?</h4>
+              <p className="region">{ region.value }</p>
+              <p>{ producer.value } { year.value }</p>
+              <p className="notes">{ notes.value }</p>
+            </Col>
+            <Col md={6}>
+              <button className="delete-submit" onClick={delReview}>Delete</button>
+              <Link className="delete-cancel" to={PATHS.LIST}>Cancel</Link>
+            </Col>
+          </Row>
         </div>  
       </>
     );
@@ -70,20 +68,18 @@ const InnerReviewDetail = ({_id: id, region: propRegion, producer: propProducer,
       <>
         <h2>Update Review</h2>
         <div className="reviews_wrapper">
-          <Container>
-            <Row>
-              <Col md={6}>
-                <AddReviewForm
-                  region={region}
-                  producer={producer}
-                  year={year}
-                  notes={notes}
-                  handler={updateReview}
-                />
-                <Link to={PATHS.LIST}>Go back</Link>
-              </Col>
-            </Row>
-          </Container>
+          <Row>
+            <Col md={6}>
+              <AddReviewForm
+                region={region}
+                producer={producer}
+                year={year}
+                notes={notes}
+                handler={updateReview}
+              />
+              <Link to={PATHS.LIST}>Go back</Link>
+            </Col>
+          </Row>
         </div>
       </>
     );

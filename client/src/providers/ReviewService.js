@@ -17,7 +17,6 @@ export class ReviewService {
 
   // create
   static createReview(reviewData) {
-  //  return this.http.post(`${this.apiurl}api/reviews`, reviewData);
     return fetch(`${this.#apiurl}api/reviews`, {
       method: 'POST',
       headers: {

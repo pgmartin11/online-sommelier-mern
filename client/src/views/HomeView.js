@@ -58,26 +58,22 @@ const HomeView = () => {
         After opening a new bottle, record your impresssions using the form below.
         Visit our <Link to={PATHS.LIST}>reviews page</Link> to see all past reviews.
       </p>
-      <Container>
-        <Row>
-          <Col md={6}>
-            <AddReviewForm
-              region={region}
-              producer={producer}
-              year={year}
-              notes={notes}
-              handler={formHandler}
-            />
-          </Col> 
-          <Col md={6}>
-            <div className="reviews_wrapper">
-              <p className="region">{formData.region}</p>
-              <p>{formData.producer} {formData.year}</p>
-              <p>{formData.notes}</p>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col md={6}>
+          <AddReviewForm
+            region={region}
+            producer={producer}
+            year={year}
+            notes={notes}
+            handler={formHandler}
+          />
+        </Col> 
+        <Col md={6}>
+          <p className="region">{formData.region}</p>
+          <p>{formData.producer} {formData.year}</p>
+          <p>{formData.notes}</p>
+        </Col>
+      </Row>
     </>
   );
 }

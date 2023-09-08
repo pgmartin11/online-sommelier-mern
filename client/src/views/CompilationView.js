@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Review from "../components/Review";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import "../scss/compilation-view.scss";
 
 
 const CompilationView = () => {
@@ -19,9 +20,6 @@ const CompilationView = () => {
     .catch(err => console.error(err));
   }, []);
 
-//debug
-console.log('reviews', reviews);
-
   return (
     <>
       <h2>Compiled Reviews</h2>
@@ -35,18 +33,16 @@ console.log('reviews', reviews);
         observations and impressions after sampling a vintage.
       </p>
 
-      <div className="reviews_wrapper">
-          <Container>
-            <Row>
-              { (reviews.length == 0) && <h5>No reviews yet</h5> }
-              { reviews.map((review, i) => (
-                    <Col key={`rev-${i}`} md={6}>
-                      <Review {...review} />
-                    </Col>
-                ))
-              }
-            </Row>
-          </Container>
+      <div className="compilation_wrapper">
+        <Row>
+          { (reviews.length == 0) && <h5>No reviews yet</h5> }
+          { reviews.map((review, i) => (
+                <Col key={`rev-${i}`} md={6}>
+                  <Review {...review} />
+                </Col>
+            ))
+          }
+        </Row>
       </div>      
     </>
   );
