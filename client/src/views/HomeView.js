@@ -11,7 +11,7 @@ import AddReviewForm from "../components/AddReviewForm";
 
 
 const HomeView = () => {
-  const [region, resetRegionField] = useInput('');
+  const [region, resetRegion] = useInput('');
   const [producer, resetProducer] = useInput('');
   const [year, resetYear] = useInput('');
   const [notes, resetNotes] = useInput('');
