@@ -24,20 +24,20 @@ app.use(bodyparser.json());
 app.use("/api/reviews", apiReviews);
 
 /*
- * Below adapted from Week 13 lecture notes
+ * Below adapted from CSCI E-31 Week 13 lecture notes
  *  note I am using public/  within /server to access the 
- *  compiled Angular code
+ *  compiled React code
  */ 
 app.use('/', (req, res) => {
    // filter for actual files we want to deliver from disk
    var pattern = new RegExp('(.css|.html|.js|.ico|.jpg|.png)+\/?$', 'gi'); 
    if (pattern.test(req.url)) {
-      // in cases where the Angular app is mounted at the root url, we may need to strip a trailing slash from the redirected request 
+      // in cases where the React app is mounted at the root url, we may need to strip a trailing slash from the redirected request 
       let url = req.url.replace(/\/$/, "");
       // deliver the requested file
       res.sendFile(path.resolve(__dirname, `./public/${url}`));
    } else {
-      // in this case, the request should be handled by Angular, which is index.html
+      // in this case, the request should be handled by React, which is index.html
       res.sendFile(path.resolve(__dirname, './public/index.html'));
    }
 });
